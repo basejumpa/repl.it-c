@@ -1,0 +1,4 @@
+main.c:1:10: fatal error: module-one.h: No such file or directory
+ #include "module-one.h"
+          ^~~~~~~~~~~~~~
+compilation terminated.

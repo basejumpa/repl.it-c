@@ -2,16 +2,20 @@
 
 include test/_test.mk
 
-.DEFAULT: main
+.DEFAULT_GOAL := main
 
 .PHONY: main
-
 main: main.exe
-./main.exe
+	./main.exe
 
-SOURCES := $(shell find $(SOURCEDIR) -name '*.c')
+SOURCES := $(wildcard *.c)
 OBJECTS := $(SOURCES:%.c=%.o)
 
-main.exe: ${OBJECTS}
+main.exe: $(OBJECTS)
+	gcc -o main.exe $(OBJECTS)
 
 -include $(OBJECTS:%.o=%.d)
+
+.PHONY: clean
+clean: clean_local
+	rm -f *.exe
