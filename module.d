@@ -1,1 +1,0 @@
-module.o: module.c
