@@ -1,3 +1,7 @@
 *.c
 *.o
 *.exe
+*.test
+*.test.old
+*.gcno
+*.gcna
